@@ -1,12 +1,16 @@
 const baseEndpoint = 'https://api.github.com';
 const usersEndpoint = `${baseEndpoint}/users`;
-const $n = document.querySelector('name');
-const $b = document.querySelector('#blog');
+const $n = document.querySelector('.name'); //Se agrega "."
+const $b = document.querySelector('.blog'); //Se agrega "."
 const $l = document.querySelector('.location');
 
-function displayUser(username) {
+// Se declara función asíncrona
+async function displayUser(username) {
   $n.textContent = 'cargando...';
+  
+  // await valido para funciones asíncronas
   const response = await fetch(`${usersEndpoint}/${username}`);
+  
   console.log(data);
   $n.textContent = '${data.name}';
   $b.textContent = '${data.blog}';
@@ -15,8 +19,8 @@ function displayUser(username) {
 
 function handleError(err) {
   console.log('OH NO!');
-  console.log(err);
-  n.textContent = `Algo salió mal: ${err}`
+  console.log(`${err}`);
+  $n.textContent = `Algo salió mal: ${err}`;
 }
 
 displayUser('stolinski').catch(handleError);

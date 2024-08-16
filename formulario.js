@@ -1,4 +1,4 @@
-var formulario = document.querySelector("#form")
+var formulario = document.querySelector(".formulario")
 
 formulario.onsubmit = function(e) {
 

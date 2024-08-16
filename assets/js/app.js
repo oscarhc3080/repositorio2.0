@@ -4,7 +4,7 @@ const $n = document.querySelector('.name'); //Se agrega "."
 const $b = document.querySelector('.blog'); //Se agrega "."
 const $l = document.querySelector('.location');
 
-// Se declara función asíncrona
+//  Se declara función asíncrona
 async function displayUser(username) {
   $n.textContent = 'cargando...';
   
@@ -24,3 +24,4 @@ function handleError(err) {
 }
 
 displayUser('stolinski').catch(handleError);
+
